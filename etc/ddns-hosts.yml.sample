@@ -1,0 +1,11 @@
+---
+- domain: DOMAIN-1.COM
+  host: MY-HOSTNAME
+  provider: namecheap
+  settings:
+    key: MY-DDNS-TOKEN-1
+- domain: DOMAIN-2.NET
+  host: MY-OTHER-HOSTNAME
+  provider: namecheap
+  settings:
+    key: MY-DDNS-TOKEN-2
