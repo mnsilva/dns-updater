@@ -33,3 +33,7 @@ inc/
 /MANIFEST.bak
 /pm_to_blib
 /*.zip
+
+# dns-updater configurations and data files
+/etc/ddns-hosts.yml
+/data
