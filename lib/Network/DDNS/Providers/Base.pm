@@ -35,6 +35,9 @@ sub new {
     $setup{'settings'} = { $class->_settings(%{$settings}, '__dont_die' => $dont_die) },
 
     $setup{'__cache_path'} = $args{'cache_path'} || '/tmp/ddns';
+    $setup{'__myip_blacklist'} = [
+        'ipdetect.dnspark.com',
+    ];
 
     return bless \%setup, $class;
 }
@@ -62,9 +65,10 @@ sub ip {
 }
 
 sub __curr_ip {
+    my $self = shift;
     return $curr_ip if $curr_ip;
 
-    my $ip_obj = Network::IP->new();
+    my $ip_obj = Network::IP->new('blacklist' => $self->{'__myip_blacklist'});
     my $ip = $ip_obj->get_ip_address();
 
     if (!$ip) {
@@ -103,7 +107,7 @@ sub update {
     my $self = shift;
     my $ip   = $self->ip(@_);
 
-    return 0 if ( !$self->needs_update( $ip ) );
+    return 128 if ( !$self->needs_update( $ip ) );
     return 0 if ( !$self->_update($ip) );
 
     my $fh;
@@ -114,6 +118,7 @@ sub update {
     open($fh, '>>', $self->__file('history'));
     print $fh sprintf("%s,%s\n", DateTime->now->iso8601(), $ip);
     close($fh);
+    return 1;
 }
 
 sub __file {
