@@ -2,7 +2,7 @@
 
 The purpose of this project is to provide a simple and provider-agnostic DDNS updater.
 
-Once many DDNS service providers ceased their free account offers, currently this project only supports [Namecheap](https://www.namecheap.com/). All contributions to support other providers are very welcome!
+Once many DDNS service providers ceased their free account offers, currently this project supports [Namecheap](https://www.namecheap.com/) and [OVH](https://www.ovh.com/). All contributions to support other providers are very welcome!
 
 ## Installation
 

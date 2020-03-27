@@ -38,7 +38,7 @@ sub _settings {
         'path'     => ($args{'path'}     || 'nic/update'),
         'realm'    => ($args{'realm'}    || 'What is your nic handle and password ??'),
     };
-    
+
     my $ua = LWP::UserAgent->new();
     $ua->agent('Mozilla/5.0');
     $ua->credentials(
