@@ -9,3 +9,9 @@
   provider: namecheap
   settings:
     key: MY-DDNS-TOKEN-2
+- domain: DOMAIN-3.ORG
+  host: MY-HOSTNAME
+  provider: ovh
+  settings:
+    username: DYNHOST_ACCESS_IDENTIFIER
+    password: DYNHOST_ACCESS_PASSWORD
