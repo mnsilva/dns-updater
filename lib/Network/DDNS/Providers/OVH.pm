@@ -79,7 +79,7 @@ sub _update {
     print $url->as_string() . "\n";
     my $response_body = $resp->decoded_content();
     print "$response_body\n";
-    if ($resp->is_success() && $response_body =~ /^good/) {
+    if ($resp->is_success() && $response_body =~ /^(good|nochg)/) {
         return 1;
     }
 
