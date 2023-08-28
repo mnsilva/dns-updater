@@ -13,9 +13,16 @@ This project is written in [Perl 5](https://www.perl.org/) programming language.
   * [Module::Pluggable](https://metacpan.org/pod/Module::Pluggable)
   * [DateTime](https://metacpan.org/pod/DateTime)
   * [LWP::UserAgent](https://metacpan.org/pod/LWP::UserAgent)
+  * [LWP::Protocol::https](https://metacpan.org/pod/LWP::Protocol::https)
   * [URI](https://metacpan.org/pod/URI)
 
-Packages for these modules can be found in almost all GNU/Linux distributions package managers.
+Packages for these modules can be found in almost all GNU/Linux distributions package managers but can also be installed by using `cpanminus` or `carton`. This will require `libssl-dev` (Debian-based distros) or `openssl-devel` (RHEL-based distros) to build `Net::SSLeay` dependency.
+
+```bash
+curl -L https://cpanmin.us/ -o ./bin/cpanm
+chmod +x ./bin/cpanm
+./bin/cpanm -L local --installdeps --notest .
+```
 
 ### Setting up
 
