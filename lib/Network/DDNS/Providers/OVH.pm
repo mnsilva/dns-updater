@@ -36,7 +36,7 @@ sub _settings {
         'server'   => ($args{'server'}   || 'www.ovh.com'),
         'port'     => ($args{'port'}     || '443'),
         'path'     => ($args{'path'}     || 'nic/update'),
-        'realm'    => ($args{'realm'}    || 'What is your nic handle and password ??'),
+        'realm'    => ($args{'realm'}    || 'Authenticated Users Only'),
     };
 
     my $ua = LWP::UserAgent->new();
